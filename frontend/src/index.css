@@ -3,6 +3,10 @@
 @tailwind components;
 @tailwind utilities;
 
+.my-transition {
+	@apply transition duration-300 ease-in-out;
+}
+
 body {
 	background-color: rgb(225, 225, 225);
 }
@@ -13,4 +17,11 @@ body {
 
 .active-mobile-menu {
 	transform: translateX(0);
+}
+
+.mobile-menubar:hover {
+	transform: rotate(180deg);
+}
+.mobile-menubar-active {
+	transform: rotate(180deg);
 }
