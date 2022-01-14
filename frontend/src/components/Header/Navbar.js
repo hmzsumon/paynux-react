@@ -84,23 +84,23 @@ const Navbar = () => {
 					/>
 				</div>
 
-				<div className='pl-2 '>
-					<div className='flex items-center space-x-2'>
-						<MdOutlineLogin />
-						<Link to='/'>
+				<div className='pl-2 mt-6 space-y-4 text-white '>
+					<div className='flex items-center space-x-4'>
+						<MdOutlineLogin className='text-2xl font-medium ' />
+						<Link to='/login'>
 							<p
-								className='text-xl font-medium text-white'
+								className='text-xl font-medium '
 								onClick={() => setIsOpen(!isOpen)}
 							>
 								Login
 							</p>
 						</Link>
 					</div>
-					<div className='flex items-center space-x-2'>
-						<MdAppRegistration />
+					<div className='flex items-center space-x-4'>
+						<MdAppRegistration className='text-2xl font-medium ' />
 						<Link to='/register'>
 							<p
-								className='text-xl font-medium text-white'
+								className='text-xl font-medium '
 								onClick={() => setIsOpen(!isOpen)}
 							>
 								Register

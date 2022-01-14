@@ -83,6 +83,7 @@ const Dashboard = () => {
 	const { user } = useSelector((state) => state.user);
 
 	const [isOpen, setIsOpen] = useState(false);
+	const [showModel, setShowModel] = useState(false);
 
 	function logoutUser() {
 		dispatch(logout());
@@ -150,13 +151,34 @@ const Dashboard = () => {
 								</div>
 							</div>
 							<div className='flex items-center justify-end p-4 space-x-4 '>
-								<div className='flex items-center space-x-2'>
-									<FaUser className='p-1 text-2xl rounded-full cursor-pointer text-my_color2 ring-2 ring-my_color1' />
+								<div className='relative flex items-center space-x-2'>
+									<FaUser
+										className='p-1 text-2xl rounded-full cursor-pointer text-my_color2 ring-2 ring-my_color1'
+										onClick={() => setShowModel(!showModel)}
+									/>
 
 									<p className='items-center hidden p-2 text-xl font-medium md:inline-flex text-my_color2'>
 										{user.name}
 									</p>
+
+									{/* user info model */}
+									{showModel && (
+										<div className='absolute w-64 h-auto p-6 bg-white -right-7 md:-right-24 rounded-2xl top-11 md:top-14'>
+											<p className='items-center p-2 text-xl font-medium md:inline-flex text-my_color2'>
+												{user.name}
+											</p>
+											<p>{user.email}</p>
+											<p>Customer Id: PAY019875465</p>
+											<button
+												className='py-2 mt-4 text-xl font-medium transition-all duration-300 ease-in-out border-2 rounded cursor-pointer md:block hover:text-white border-my_color2 px-9 hover:bg-my_color2'
+												onClick={() => logoutUser()}
+											>
+												Logout
+											</button>
+										</div>
+									)}
 								</div>
+
 								<div>
 									<button
 										className='hidden py-2 text-xl font-medium transition-all duration-300 ease-in-out border-2 rounded cursor-pointer md:block hover:text-white border-my_color2 px-9 hover:bg-my_color2 '
