@@ -17,6 +17,12 @@ const userSchema = new mongoose.Schema({
 		unique: true,
 		validate: [validator.isEmail, 'Please Enter a valid Email'],
 	},
+	customer_id: {
+		type: String,
+		trim: true,
+		unique: true,
+		default: 'PX0000000',
+	},
 	password: {
 		type: String,
 		required: [true, 'Please Enter Your Password'],
@@ -40,11 +46,6 @@ const userSchema = new mongoose.Schema({
 	createdAt: {
 		type: Date,
 		default: Date.now,
-	},
-
-	note_limit: {
-		type: Number,
-		default: 0,
 	},
 
 	resetPasswordToken: String,

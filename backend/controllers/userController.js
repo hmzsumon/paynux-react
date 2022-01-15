@@ -24,11 +24,15 @@ exports.registerUser = catchAsyncErrors(async (req, res, next) => {
 		});
 	}
 
+	let random_num = Math.floor(Math.random() * 10000000);
+	let customer_id = `PX${random_num}`;
+
 	const { name, email, password } = req.body;
 
 	const user = await User.create({
 		name,
 		email,
+		customer_id,
 		password,
 		avatar: {
 			public_id: myCloud.public_id,

@@ -123,11 +123,11 @@ const Dashboard = () => {
 								const { id, name, icon } = item;
 								return (
 									<div
-										className='flex items-center w-full px-4 py-4 space-x-4 font-semibold text-gray-700 transition-all duration-300 ease-in-out cursor-pointer hover:bg-gray-200 hover:text-gray-900'
+										className='flex items-center w-full px-4 py-4 space-x-4 font-medium text-gray-700 uppercase transition-all duration-300 ease-in-out cursor-pointer hover:bg-gray-200 hover:text-gray-900'
 										key={id}
 									>
 										<i className='text-2xl'>{icon}</i>
-										<p className='text-xl'>{name}</p>
+										<p className='text-lg'>{name}</p>
 									</div>
 								);
 							})}
@@ -168,7 +168,7 @@ const Dashboard = () => {
 												{user.name}
 											</p>
 											<p>{user.email}</p>
-											<p>Customer Id: PAY019875465</p>
+											<p>Customer Id: {user.customer_id}</p>
 											<button
 												className='py-2 mt-4 text-xl font-medium transition-all duration-300 ease-in-out border-2 rounded cursor-pointer md:block hover:text-white border-my_color2 px-9 hover:bg-my_color2'
 												onClick={() => logoutUser()}
@@ -199,12 +199,12 @@ const Dashboard = () => {
 								const { id, name, icon } = item;
 								return (
 									<div
-										className='flex items-center w-full px-4 py-4 space-x-4 font-semibold text-gray-700 cursor-pointer my-transition hover:bg-gray-200 hover:text-gray-900'
+										className='flex items-center w-full px-4 py-4 space-x-4 font-medium text-gray-700 uppercase cursor-pointer my-transition hover:bg-gray-200 hover:text-gray-900'
 										key={id}
 										onClick={() => setIsOpen(!isOpen)}
 									>
 										<i className='text-2xl'>{icon}</i>
-										<p className='text-xl'>{name}</p>
+										<p className='text-lg'>{name}</p>
 									</div>
 								);
 							})}
